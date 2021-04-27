@@ -7,7 +7,7 @@
 import SwiftUI
 
 class RecipeManager: ObservableObject {
-    @Published var data = Data.recipes
+    @Published var data = RecipeData.recipes
     @Published var selectedRecipe: RecipeItem? = nil
     //@Published var selectedRecipe: RecipeItem? = Data.recipes[0]
     @Published var swipeHeight:CGFloat = 0.0

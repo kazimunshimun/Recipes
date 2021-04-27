@@ -8,7 +8,7 @@
 import Foundation
 
 // next lets add some data to work with
-struct Data {
+struct RecipeData {
     static let recipes = [
         RecipeItem(title: "Salmon Greek Salad with Lemon Basil Dressing",
                    description: "Light, fresh and healthy grilled salmon Greek salad. Crisp vegetables are tossed in a tangy lemon basil dressing and topped with salmon.",

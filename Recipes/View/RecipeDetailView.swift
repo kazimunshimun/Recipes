@@ -37,13 +37,13 @@ struct RecipeDetailView: View {
                         // info view
                         HStack(spacing: 32) {
                             HStack(spacing: 12) {
-                                Image(systemName: Data.summaryImageName["time"] ?? "?")
+                                Image(systemName: RecipeData.summaryImageName["time"] ?? "?")
                                     .foregroundColor(.green)
                                 Text(manager.selectedRecipe?.summary["time"] ?? "?")
                             }
                             
                             HStack(spacing: 12) {
-                                Image(systemName: Data.summaryImageName["ingredientCount"] ?? "?")
+                                Image(systemName: RecipeData.summaryImageName["ingredientCount"] ?? "?")
                                     .foregroundColor(.green)
                                 Text(manager.selectedRecipe?.summary["ingredientCount"] ?? "?")
                             }

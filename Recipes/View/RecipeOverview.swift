@@ -56,7 +56,7 @@ struct SummaryView: View {
         VStack(alignment: .leading, spacing: 24) {
             ForEach(recipe.summary.sorted(by: <), id: \.key) { key, value in
                 HStack(spacing: 12) {
-                    Image(systemName: Data.summaryImageName[key] ?? "")
+                    Image(systemName: RecipeData.summaryImageName[key] ?? "")
                         .foregroundColor(.green)
                     Text(value)
                 }
