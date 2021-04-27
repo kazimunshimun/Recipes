@@ -13,12 +13,12 @@
             "Fresh",
             "Healthy!"
         ],
-        "summary": [
-            {"rating":"5"},
-            {"serves":"2"},
-            {"preparation" : "10 minutes"},
-            {"cooking" : "35 minutes"}
-        ],
+        "summary": {
+            "rating":"5",
+            "serves":"2",
+            "preparation" : "10 minutes",
+            "cooking" : "35 minutes"
+        },
         "category":"Special Dishes",
         "ingredients":
         [
@@ -69,12 +69,12 @@
             "Delicious",
             "Easy!"
         ],
-        "summary": [
-            {"rating":"5"},
-            {"serves":"2"},
-            {"preparation" : "10 minutes"},
-            {"cooking" : "25 minutes"}
-        ],
+        "summary": {
+            "rating":"5",
+            "serves":"2",
+            "preparation" : "10 minutes",
+            "cooking" : "25 minutes"
+        },
         "category":"Special Dishes",
         "ingredients":
         [
@@ -118,12 +118,12 @@
             "Perfect",
             "Melts in your mouth!"
         ],
-        "summary": [
-            {"rating":"5"},
-            {"serves":"2"},
-            {"preparation" : "10 minutes"},
-            {"cooking" : "15 minutes"}
-        ],
+        "summary": {
+            "rating":"5",
+            "serves":"2",
+            "preparation" : "10 minutes",
+            "cooking" : "15 minutes"
+        },
         "category":"Special Dishes",
         "ingredients":
         [
@@ -160,12 +160,12 @@
             "Healthy",
             "Simple!"
         ],
-        "summary": [
-            {"rating":"5"},
-            {"serves":"2"},
-            {"preparation" : "10 minutes"},
-            {"cooking" : "30 minutes"}
-        ],
+        "summary": {
+            "rating":"5",
+            "serves":"2",
+            "preparation" : "10 minutes",
+            "cooking" : "30 minutes"
+        },
         "category":"Special Dishes",
         "ingredients":
         [

@@ -51,7 +51,7 @@ struct TitleView: View {
 }
 
 struct SummaryView: View {
-    let recipe: RecipeItem
+    let recipe: Recipe
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             ForEach(recipe.summary.sorted(by: <), id: \.key) { key, value in
@@ -70,7 +70,6 @@ struct SummaryView: View {
             }
         }
         .font(.system(size: 17, weight: .semibold))
-        
     }
 }
 
@@ -103,7 +102,7 @@ struct DescriptionView: View {
 }
 
 struct RecipeInteractionView: View {
-    let recipe: RecipeItem
+    let recipe: Recipe
     let index: Int
     let count: Int
     @ObservedObject var manager: RecipeManager
@@ -134,7 +133,7 @@ struct RecipeInteractionView: View {
                 .scaleEffect(1.15)
                 .matchedGeometryEffect(id: "arrowId", in: viewSpace, isSource: true)
             
-            Image(recipe.imageName)
+            Image(recipe.image)
                 .resizable()
                 .scaledToFit()
                 .matchedGeometryEffect(id: "imageId", in: viewSpace, isSource: true)

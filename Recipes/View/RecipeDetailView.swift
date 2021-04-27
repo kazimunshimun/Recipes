@@ -37,15 +37,15 @@ struct RecipeDetailView: View {
                         // info view
                         HStack(spacing: 32) {
                             HStack(spacing: 12) {
-                                Image(systemName: RecipeData.summaryImageName["time"] ?? "?")
+                                Image(systemName: RecipeData.summaryImageName["cooking"] ?? "?")
                                     .foregroundColor(.green)
-                                Text(manager.selectedRecipe?.summary["time"] ?? "?")
+                                Text(manager.selectedRecipe?.summary["cooking"] ?? "?")
                             }
                             
                             HStack(spacing: 12) {
-                                Image(systemName: RecipeData.summaryImageName["ingredientCount"] ?? "?")
+                                Image(systemName: RecipeData.summaryImageName["serves"] ?? "?")
                                     .foregroundColor(.green)
-                                Text(manager.selectedRecipe?.summary["ingredientCount"] ?? "?")
+                                Text(manager.selectedRecipe?.summary["serves"] ?? "?")
                             }
                         }
                         .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
@@ -64,7 +64,7 @@ struct RecipeDetailView: View {
                         
                     } else {
                         // steps list
-                        MethodListView(methods: manager.selectedRecipe?.instructions ?? ["?"])
+                        MethodListView(methods: manager.selectedRecipe?.directions ?? ["?"])
                             .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
                     }
                 }
@@ -146,17 +146,13 @@ struct IngredientMethodToggleStyle: ToggleStyle {
 struct IngredientListView: View {
     @ObservedObject var manager: RecipeManager
     var body: some View {
-        ForEach(0..<manager.data[manager.currentRecipeIndex].instructions.count) { i in
-            Toggle(isOn: Binding<Bool>(
-                get: { manager.data[manager.currentRecipeIndex].ingredients[i].available },
-                set: { manager.data[manager.currentRecipeIndex].ingredients[i].available = $0}
-            ),
-                   label: {
-                    Text(manager.data[manager.currentRecipeIndex].ingredients[i].title)
-                        .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
-            })
-            .toggleStyle(CircularToggleStyle())
-            .padding(.vertical, 8)
+        ForEach(manager.data[manager.currentRecipeIndex].ingredients) { ingredient in
+            HStack {
+                Text("(\(ingredient.num ?? 0))")
+                Text(ingredient.name)
+            }
+            .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
+            .padding(8)
         }
     }
 }
