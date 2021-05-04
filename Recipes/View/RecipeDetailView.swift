@@ -146,13 +146,22 @@ struct IngredientMethodToggleStyle: ToggleStyle {
 struct IngredientListView: View {
     @ObservedObject var manager: RecipeManager
     var body: some View {
-        ForEach(manager.data[manager.currentRecipeIndex].ingredients) { ingredient in
-            HStack {
-                Text("(\(ingredient.num ?? 0))")
-                Text(ingredient.name)
-            }
-            .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
-            .padding(8)
+        ForEach(0..<manager.data[manager.currentRecipeIndex].ingredients.count) { i in
+            Toggle(isOn: Binding<Bool>(
+                get: {
+                    manager.data[manager.currentRecipeIndex].ingredients[i].available ?? false
+                },
+                set: {
+                    manager.data[manager.currentRecipeIndex].ingredients[i].available = $0
+                    manager.objectWillChange.send()
+                }
+            ),
+                   label: {
+                    Text(manager.data[manager.currentRecipeIndex].ingredients[i].name)
+                        .foregroundColor(manager.currentRecipeIndex%2 == 0 ? .black : .white)
+            })
+            .toggleStyle(CircularToggleStyle())
+            .padding(.vertical, 8)
         }
     }
 }

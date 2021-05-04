@@ -31,5 +31,6 @@ class Ingredient: Identifiable, Decodable {
     var num:Int?
     var denom:Int?
     var unit:String?
+    var available: Bool?
 }
 
